@@ -6,11 +6,12 @@ import (
 	// "log"
 	// "os"
 	"gopkg.in/confluentinc/confluent-kafka-go.v1/kafka"
-	"utility"
+	"github.com/ritwiksamrat/consumer/consumer1"
 )
 
 func main() {
 	
+	fmt.Println(consumer1.samp)
 	c, err := kafka.NewConsumer(&kafka.ConfigMap{
 		"bootstrap.servers": "localhost",
 		"group.id":          "myGroup",
@@ -31,9 +32,6 @@ func main() {
 			fmt.Printf("Consumer error: %v (%v)\n", err, key)
 		}
 	}
-	
-	conv:=sx
-	fmt.Println(conv)
 
 defer c.Close()
 
